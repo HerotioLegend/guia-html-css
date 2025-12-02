@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake CSS Animado</title>
+
+<style>
+    body {
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    .board {
+        width: 400px;
+        height: 400px;
+        background: #111;
+        border: 4px solid #0f0;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0f0;
+    }
+
+    .snake-seg {
+        width: 20px;
+        height: 20px;
+        background: #0f0;
+        position: absolute;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #0f0;
+    }
+
+    /* Cabeça da cobra (segmento 1) */
+    .s1 {
+        animation: move 6s linear infinite;
+    }
+
+    /* Cada segmento segue o anterior com um delay */
+    .s2 { animation: move 6s linear infinite; animation-delay: -0.15s; }
+    .s3 { animation: move 6s linear infinite; animation-delay: -0.30s; }
+    .s4 { animation: move 6s linear infinite; animation-delay: -0.45s; }
+    .s5 { animation: move 6s linear infinite; animation-delay: -0.60s; }
+    .s6 { animation: move 6s linear infinite; animation-delay: -0.75s; }
+    .s7 { animation: move 6s linear infinite; animation-delay: -0.90s; }
+    .s8 { animation: move 6s linear infinite; animation-delay: -1.05s; }
+
+    /*
+        💡 A cobra percorre o perímetro do tabuleiro
+        (você pode alterar o trajeto facilmente)
+    */
+    @keyframes move {
+        0%   { top: 0; left: 0; }
+        25%  { top: 0; left: 380px; }
+        50%  { top: 380px; left: 380px; }
+        75%  { top: 380px; left: 0; }
+        100% { top: 0; left: 0; }
+    }
+
+    /* Comida estática para efeito visual */
+    .food {
+        width: 18px;
+        height: 18px;
+        background: red;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px red;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="board">
+
+        <!-- comida decorativa -->
+        <div class="food"></div>
+
+        <!-- cobra completa -->
+        <div class="snake-seg s1"></div>
+        <div class="snake-seg s2"></div>
+        <div class="snake-seg s3"></div>
+        <div class="snake-seg s4"></div>
+        <div class="snake-seg s5"></div>
+        <div class="snake-seg s6"></div>
+        <div class="snake-seg s7"></div>
+        <div class="snake-seg s8"></div>
+
+    </div>
+
+</body>
+</html>
+
