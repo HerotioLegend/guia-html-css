@@ -62,6 +62,11 @@ Esta pasta contém arquivos reais demonstrando o básico:
 
 ---
 
+## Como criar um arquivo em html e em css
+
+Basta criar um arquivo com o nome "index.html", logo apos digitar "!" e apertar ENTER.
+Para o css, basta criar um arquivo com o nome "style.css".
+
 ## Como visualizar os exemplos
 
 Basta abrir qualquer arquivo `.html` no navegador.
